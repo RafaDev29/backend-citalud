@@ -3,14 +3,17 @@ from rest_framework.routers import DefaultRouter
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from .views import MedicoRegisterView
+from .views import MedicamentoViewSet
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import MedicoRegisterView, PacienteViewSet
-
+from .views import MedicoRegisterView, PacienteViewSet , CitaViewSet, AtencionViewSet , ServicioMedicoViewSet
 
 router = DefaultRouter()
 router.register(r'pacientes', PacienteViewSet)
-
+router.register(r'citas', CitaViewSet)
+router.register(r'atenciones', AtencionViewSet)
+router.register(r'medicamentos', MedicamentoViewSet)
+router.register(r'servicios', ServicioMedicoViewSet)
 
 urlpatterns = [
      path('', include(router.urls)),

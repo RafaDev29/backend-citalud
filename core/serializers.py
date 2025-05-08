@@ -1,11 +1,36 @@
 from rest_framework import serializers
 from .models import Paciente
+from .models import Cita
+from .models import Atencion
+from .models import Medicamento
+from .models import ServicioMedico
 from django.contrib.auth.models import User
+
+
+class ServicioMedicoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ServicioMedico
+        fields = '__all__'
 
 
 class PacienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Paciente
+        fields = '__all__'
+
+class CitaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cita
+        fields = '__all__'
+
+class AtencionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Atencion
+        fields = '__all__'
+
+class MedicamentoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Medicamento
         fields = '__all__'
 
 class MedicoRegisterSerializer(serializers.ModelSerializer):
