@@ -4,8 +4,8 @@ class Paciente(models.Model):
     nombre = models.CharField(max_length=100)
     dni = models.CharField(max_length=8, unique=True)
     fecha_nacimiento = models.DateField()
+    telefono = models.CharField(max_length=15)
     direccion = models.TextField(blank=True)
-    telefono = models.CharField(max_length=15, blank=True)
     email = models.EmailField(blank=True)
 
     def __str__(self):
